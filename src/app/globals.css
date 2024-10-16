@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html {
+  font-size: 87.5%
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.multiline-ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* start showing ellipsis when 3rd line is reached */
+  white-space: pre-wrap; /* let the text wrap preserving spaces */
+}
+
+@layer base {
+  p {
+    @apply text-base;
+  }
+
+  h1 {
+    @apply text-2xl lg:text-3xl font-medium tracking-wide;
+  }
+
+  h2 {
+    @apply text-2xl lg:text-3xl font-medium tracking-wide;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl font-medium tracking-wide;
+  }
+
+  h4 {
+    @apply lg:text-lg font-medium tracking-wide;
+  }
+
+  h5 {
+    @apply sm:text-lg md:text-xl font-medium;
+  }
+
+  h6 {
+    @apply text-base sm:text-lg font-medium;
+  }
+
+  input {
+    @apply rounded-lg bg-neutral-10 border-divider-border;
+  }
+
+  section {
+    @apply overflow-hidden
+  }
+
+  .section {
+    @apply py-8 md:py-12 xl:py-16;
+  }
+  
+  .icon-button {
+    @apply py-2 px-2 rounded-full shadow bg-primary-hover text-primary-main hover:opacity-75;
+  }
+
+  .swiper-disable {
+    @apply bg-neutral-20 text-neutral-50 hover:opacity-100;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.mySwiper {
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-inactive-color: #FFF;
+  --swiper-pagination-bullet-inactive-opacity: 0.75;
 }
