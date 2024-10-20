@@ -54,7 +54,7 @@ const ActivitySection = () => (
               key={`activity-${index}`}
               style={{
                 width: 320,
-                height: 440,
+                height: "auto !important",
               }}
             >
               <ActivityCard {...item} />
