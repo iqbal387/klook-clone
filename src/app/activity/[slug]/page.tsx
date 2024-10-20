@@ -17,18 +17,8 @@ type Props = {
 
 const ActivityDetail = ({ params }: Props) => {
   const data = activity.find((item) => item.title === decodeURI(params.slug));
-  const {
-    title,
-    images,
-    category,
-    location,
-    badges,
-    // additionalBadge,
-    // price,
-    // discount,
-    review,
-    orderQantity,
-  } = data || {};
+  const { title, images, category, location, badges, review, orderQantity } =
+    data || {};
 
   return (
     <section className="section pt-6 overflow-x-hidden">
